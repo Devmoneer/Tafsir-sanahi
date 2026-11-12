@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153a31">
+    <meta
+      name="description"
+      content="View daily prayer times for cities across Kurdistan. Choose a city and date to see Fajr, sunrise, Dhuhr, Asr, Maghrib and Isha."
+    >
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prayer Times for Kurdistan Cities">
+    <meta
+      property="og:description"
+      content="A simple, open-source daily prayer schedule for cities across Kurdistan."
+    >
+    <meta name="twitter:card" content="summary">
+    <title>Prayer Times for Kurdistan Cities | Daily Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prayer Times for Kurdistan Cities",
+        "description": "A daily prayer schedule for cities across Kurdistan.",
+        "inLanguage": "en"
+      }
+    </script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to prayer times</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Prayer Times home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 4.5 23.8 16l11.7 4-11.7 4L20 35.5 16.2 24l-11.7-4 11.7-4L20 4.5Z" stroke="currentColor" stroke-width="1.7" />
+            <circle cx="20" cy="20" r="3" fill="currentColor" />
+          </svg>
+        </span>
+        <span class="brand-name">Prayer Times <span>of Kurdistan</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#schedule">Daily schedule</a>
+        <a href="#about">About this project</a>
+        <a class="github-link" href="https://github.com/Devmoneer/Tafsir-sanahi" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A daily guide for our cities</p>
+          <h1 id="page-title">Find your time.<br><span>Find your stillness.</span></h1>
+          <p class="hero-description">
+            Prayer times for cities across Kurdistan, gathered in one calm, simple place.
+            Choose a city and a date to view its schedule.
+          </p>
+          <a class="hero-cta" href="#schedule">View today's schedule <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun-disc"></div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <div class="hero-caption"><span class="caption-line"></span> Kurdistan, our home</div>
+          <span class="art-star star-one">✳</span>
+          <span class="art-star star-two">✦</span>
+        </div>
+      </section>
+
+      <section class="schedule-section" id="schedule" aria-labelledby="schedule-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">Your daily guide</p>
+            <h2 id="schedule-title">Prayer schedule</h2>
+          </div>
+          <p class="section-note">A moment for every part of the day.</p>
+        </div>
+
+        <div class="schedule-panel">
+          <div class="schedule-controls">
+            <label class="field">
+              <span class="field-label">Choose a city</span>
+              <span class="select-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" /><circle cx="12" cy="9" r="2.3" /></svg>
+                <select id="city-select" name="city" autocomplete="off"></select>
+                <span class="select-chevron" aria-hidden="true">⌄</span>
+              </span>
+            </label>
+            <label class="field">
+              <span class="field-label">Choose a date</span>
+              <span class="date-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" /><path d="M7.5 3.5v3M16.5 3.5v3M3.5 9.5h17" /></svg>
+                <input id="date-select" name="date" type="date" required>
+              </span>
+            </label>
+          </div>
+
+          <div class="schedule-date">
+            <div>
+              <p class="date-kicker">Daily times for</p>
+              <h3 id="selected-date">Loading schedule...</h3>
+            </div>
+            <span class="date-decoration" aria-hidden="true">✳</span>
+          </div>
+
+          <p class="schedule-status" id="schedule-status" role="status" aria-live="polite">
+            Loading prayer times...
+          </p>
+          <div class="prayer-grid" id="prayer-grid" aria-label="Prayer times"></div>
+          <p class="data-note">Dates in the data files use month and day only, not a year. Times are shown as provided; please check with a local mosque for confirmation.</p>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="about-intro">
+          <p class="eyebrow section-eyebrow">Built with care, shared openly</p>
+          <h2 id="about-title">A little more about this project</h2>
+          <p>
+            This community project makes the prayer schedules in its city data files easy to browse.
+            It is free to use, and everyone is welcome to help improve it.
+          </p>
+        </div>
+        <div class="about-cards">
+          <article class="about-card">
+            <span class="card-number">01</span>
+            <h3>Choose your city</h3>
+            <p>Pick a city from the menu to load its schedule directly from the project data.</p>
+          </article>
+          <article class="about-card">
+            <span class="card-number">02</span>
+            <h3>Select a date</h3>
+            <p>Use the date picker to find the available daily times for the date you need.</p>
+          </article>
+          <article class="about-card">
+            <span class="card-number">03</span>
+            <h3>Help it grow</h3>
+            <p>Contribute corrections, data sources, and new cities through the open-source repository.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="accuracy-note" aria-label="Schedule information">
+        <span class="accuracy-icon" aria-hidden="true">i</span>
+        <p><strong>A note on accuracy</strong> — The schedules are displayed as stored in this repository. Their calculation method, source, and time zone are not specified here, so please verify important times locally.</p>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#top">Prayer Times <span>of Kurdistan</span></a>
+      <p>Made for our community. Shared with everyone.</p>
+      <a href="https://github.com/Devmoneer/Tafsir-sanahi" target="_blank" rel="noreferrer">Explore the source <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
